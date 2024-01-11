@@ -1,0 +1,44 @@
+@use "../../abstracts/colors";
+
+.werkwijze{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__card{
+        box-shadow: 0 4px 8px rgba(0.7, 0.7, 0.7, 0.7); /* Add a subtle box shadow */
+        margin-top: 2rem;
+        padding: 1rem;
+        width: 80rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        background-color:#D8D9DA ;
+        transition: 0.8s all;
+
+        &--p{
+            display: flex;
+            gap: 1rem;
+            font-size: 180%;
+        }
+
+
+
+    }
+
+    &__link{
+        text-decoration: none;
+      color:  #191919;
+      text-decoration: underline;
+
+        &:hover{
+            cursor: pointer;
+            color: colors.$red-color;
+          
+           }
+
+    }
+
+
+}

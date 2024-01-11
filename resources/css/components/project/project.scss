@@ -1,0 +1,72 @@
+.project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+    &__h2{
+        font-size: 250%;
+        color: #191919;
+        margin-top: 4rem;
+
+    }
+
+
+    &__h3{
+        font-size: 200%;
+        color: #191919;
+        margin-top: 4rem;
+
+    }
+
+
+    &__text{
+        margin-top: 0.5rem;
+        font-size: 200%;
+        width: 60%;
+
+    }
+
+    &__figure {
+        margin-top: 5rem;
+        width: 120rem;
+        height: 60rem;
+        padding: 2rem;
+        object-fit: contain;
+      }
+
+      &__article{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5rem;
+        
+
+      }
+
+      &__figureimg {
+     
+        margin-top: 5rem;
+        width: 60rem;
+        height: 40rem;
+        padding: 2rem;
+        object-fit: contain;
+        
+      }
+      &__img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &__video{
+        width: 100%;
+        height: 100%;
+      }
+
+      &__p{
+        font-size: 180%;
+      }
+}

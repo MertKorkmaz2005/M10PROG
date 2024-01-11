@@ -1,0 +1,106 @@
+@use "../../abstracts/colors";
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &__h2 {
+    margin-top: 5rem;
+    font-size: 250%;
+    color: #191919;
+  }
+  &__h3 {
+    margin-top: 1rem;
+    font-size: 220%;
+  }
+
+  &__imgFigure {
+    width: 120rem;
+    height: 60rem;
+    padding: 2rem;
+    object-fit: cover;
+  }
+
+  &__imgFigure2 {
+    margin-top: 5rem;
+    width: 120rem;
+    height: 60rem;
+    padding: 2rem;
+    object-fit: cover;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    margin-top: 3rem;
+    font-size: 200%;
+    width: 60%;
+  }
+
+  &__card {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100rem;
+    height: 40rem;
+    background-color: #D8D9DA;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0.7, 0.7, 0.7, 0.7); /* Add a subtle box shadow */
+
+    &--imgwrapper {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    &--img {
+      height: 100%;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0.7, 0.7, 0.7, 0.7); /* Add a subtle box shadow */
+
+    }
+    &--textwrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 1rem;
+    }
+    &--h2 {
+      font-size: 200%;
+    }
+    &--p {
+      font-size: 180%;
+    }
+
+    &--arrowLink {
+      text-decoration: none;
+      color:#191919 ;
+    }
+
+    &--arrowButton {
+      display: flex;
+      width: 13rem;
+      height: 4rem;
+      border-radius: 0.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      transition: 0.5s all;
+      gap: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0.7, 0.7, 0.7, 0.7); /* Add a subtle box shadow */
+
+
+      &:hover {
+        cursor: pointer;
+        background: colors.$red-color;
+      }
+    }
+
+
+  }
+}

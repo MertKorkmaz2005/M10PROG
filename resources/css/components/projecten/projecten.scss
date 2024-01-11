@@ -1,0 +1,89 @@
+.projecten {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+
+  &__Hwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+
+  &__h2 {
+    font-size: 250%;
+    color: #191919;
+  }
+
+  &__h3 {
+    font-size: 220%;
+  }
+
+  &__article {
+    margin-top: 2rem;
+    color: #191919;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    transition: 0.5s all;
+    box-shadow: 0 4px 8px rgba(0.7, 0.7, 0.7, 0.7); 
+
+    &--1 {
+      background-image: url("../img/spinoza.jpg");
+    }
+    &--2 {
+      background-image: url("../img/aics.jpg");
+    }
+    &--3 {
+      background-image: url("../img/bostheater.png");
+    }
+    &--4 {
+      background-image: url("../img/wereld.jpg");
+    }
+    &--5 {
+      background-image: url("../img/kwartier.png");
+    }
+    &--6 {
+      background-image: url("../img/renovatie.jpg");
+    }
+
+    &--7 {
+      background-image: url("../img/afc.jpg");
+    }
+    &--8 {
+      background-image: url("../img/werven.jpg");
+    }
+
+    &:hover {
+      width: 41rem;
+      height: 41rem;
+      cursor: pointer;
+      color: #fe0000;
+    }
+
+    &--link {
+      text-decoration: none;
+    }
+
+    &--h2 {
+      font-size: 230%;
+    }
+
+    &--p {
+      font-size: 180%;
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 3rem;
+    }
+  }
+}

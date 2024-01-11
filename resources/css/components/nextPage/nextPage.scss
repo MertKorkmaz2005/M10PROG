@@ -1,0 +1,104 @@
+@use "../../abstracts/colors";
+
+.nextPage{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    &__card{
+        box-shadow: 0 4px 8px rgba(0.7, 0.7, 0.7, 0.7); /* Add a subtle box shadow */
+        width: 40rem;
+        height: 55rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        flex-direction: column;
+        background-color: #D8D9DA;
+        padding: 1rem;
+        border-radius: 0.5rem;
+
+
+    }
+
+    &__h2{
+        margin-top: 2rem;
+        font-size: 250%;
+      color:  #191919;
+
+    }
+
+    &__figureImg{
+        width: 35rem;
+        height: 20rem;
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    &__p{
+        font-size: 150%;
+        width: 30rem;
+        color: #191919;
+        
+
+    }
+
+
+  &__buttonWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+ 
+  
+ 
+   }
+ 
+   &__arrowButton{
+     display: flex;
+     width: 6rem;
+     height: 6rem;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border: none;
+     transition: 0.5s all;
+ 
+ 
+    &:hover{
+     cursor: pointer;
+     background: colors.$red-color;
+    }
+ 
+ 
+   }
+ 
+   &__arrowI{
+     font-size: 180%;
+     transition: 0.3s all;
+ 
+ 
+    &:hover{
+     cursor: pointer;
+     font-size: 210%;
+    }
+ 
+   }
+ 
+   &__arrowLink{
+     text-decoration: none;
+   }
+ }
+ 
+
+
+

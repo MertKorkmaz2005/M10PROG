@@ -1,0 +1,57 @@
+@use "../../abstracts/colors";
+
+.footer{
+    width: 100%;
+    height: 20rem;
+    background-color: #D8D9DA;
+    margin-top: 10rem;
+   
+    &__ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+       
+
+    }
+
+    &__li{
+        display: flex;
+        list-style: none;
+        margin-top: 5rem;
+        flex-direction: column;
+        font-size: 150%;
+        width: 25rem;
+        gap: 1rem;
+        
+    }
+
+    &__link{
+        text-decoration: none;
+        color: #191919;
+        transition: 0.5s all;
+        width: max-content;
+
+
+        &:hover{
+            cursor: pointer;
+            color: colors.$red-color;
+            text-decoration: underline;
+           }
+      
+    }
+
+    &__linkWrapper{
+        display: flex;
+        gap: 0.5rem;
+
+        &--letter{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__icon{
+        font-size: 170%;
+    }
+}

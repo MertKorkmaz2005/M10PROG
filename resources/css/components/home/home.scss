@@ -1,0 +1,128 @@
+@use "../../abstracts/colors";
+
+.home {
+  background-image: url("../img/bmvHomePage.jpg");
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+
+  &--organisatie{
+    background-image: url("../img/organisatiehome2.jpg");
+
+  }
+
+  &--projecten{
+    background-image: url("../img/projectenhome3.jpg");
+
+  }
+
+  &--werkenbij{
+    background-image: url("../img/werkenbijhome.jpg");
+
+  }
+
+  &--spinoza{
+    background-image: url("../img/spinoza.jpg");
+  }
+  &--aics{
+    background-image: url("../img/aics.jpg");
+  }
+
+  &--bos{
+    background-image: url("../img/bostheater.png");
+  }
+
+  &--wereld{
+    background-image: url("../img/wereld.jpg");
+  }
+  &--slavernij {
+    background-image: url("../img/kwartier-1.jpg");
+  }
+  &--museum{
+    background-image: url("../img/renovatie.jpg");
+
+  }
+  &--afc{
+    background-image: url("../img/afc.jpg");
+
+  }
+  &--werven{
+    background-image: url("../img/werven.jpg");
+
+  }
+
+  &__wrapperText {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #191919;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+
+    &--home{
+      color: #eee;
+
+    }
+  }
+
+  &__h2{
+    font-size: 300%;
+  }
+  &__h3{
+    font-size: 250%;
+    
+
+  }
+
+  &__buttonWrapper{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-top: 50rem;
+
+
+ 
+
+  }
+
+  &__arrowButton{
+    display: flex;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: 0.5s all;
+
+
+   &:hover{
+    cursor: pointer;
+    background: colors.$red-color;
+   }
+
+
+  }
+
+  &__arrowI{
+    font-size: 180%;
+    transition: 0.3s all;
+
+
+   &:hover{
+    cursor: pointer;
+    font-size: 210%;
+   }
+
+  }
+
+  &__arrowLink{
+    text-decoration: none;
+  }
+}
