@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectAdmincontroller;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,5 +35,18 @@ Route::middleware('auth')->group(function () {
 Route::get('/projecten', [ProjectController::class, 'index'])->name('projecten');
 Route::get('/project/{project}', [ProjectController::class, 'show'])->name('projecten.show');
 Route::get('/projecten/add', [ ProjectController::class, 'add' ])->name('project.add');
+
+
+
+Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::resources([
+        'projecten' => ProjectAdmincontroller::class,
+    ]);
+});
+
+
 
 require __DIR__.'/auth.php';
