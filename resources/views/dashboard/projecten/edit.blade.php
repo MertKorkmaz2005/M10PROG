@@ -13,7 +13,9 @@
         <x-nav-link :href="route('projecten.index')" :active="request()->routeIs('dashboard')">
                 {{ __('projecten') }}
         </x-nav-link>
-        <h2>New project</h2>
+        <h2>
+            {{ __('Project:')}} {{ $project->titel}}
+        </h2>
         </x-slot>
         
 
@@ -27,19 +29,19 @@
                 </div>
             </div>
         </div>
+       
 
-        <form action="{{route('projecten.store')}}" method="POST">
+        <form action="{{route('projecten.update', ['projecten' => $project])}}" method="POST">
+            @method('PUT')
             @csrf
-
-
                 <div class="mt-8 max-w-md">
             
 
                     <div class="grid grid-cols-1 gap-6">
 
-                    @include('dashboard.projecten._form', ['project' => $project ])
+                    @include('dashboard.projecten._form', ['project' => $project])
                     
-                    <button class="border" type="submit">Opslaan</button>
+                    <button class="border" type="submit">Updaten</button>
 
                     </div>
 

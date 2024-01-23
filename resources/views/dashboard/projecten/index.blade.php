@@ -35,20 +35,27 @@
     @foreach($projecten as $project)
 
             <article class="nextPage__card">
-            <h2 class="nextPage__h2">{{$project->titel}}</h2>
+            <a href="{{ route('projecten.edit', ['projecten' => $project]) }}" class="nextPage__h2">{{$project->titel}}</a>
             <figure class="nextPage__figureImg">
                 <img src="{{$project->img}}" alt="" class="nextPage__img" />
             </figure>
             <p class="nextPage__p">
             {{$project->description}}
             </p>
+            <td> 
+                <a href="{{ route('projecten.edit', ['projecten' => $project]) }}" class="underline">Bewerk</a>
+            </td>
+            <td> 
+                <form action="{{ route('projecten.destroy', ['projecten' => $project]) }}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit">Verwijder</button>
+                </form>
+                
 
-            <figure class="nextPage__buttonWrapper">
-                <a class="nextPage__arrowLink" href="{{route('projecten.show', $project)}}"
-                ><button class="nextPage__arrowButton">
-                    <i class="nextPage__arrowI fa-solid fa-arrow-right"></i></button
-                ></a>
-            </figure>
+            </td>
+
+    
 
             </article>
 

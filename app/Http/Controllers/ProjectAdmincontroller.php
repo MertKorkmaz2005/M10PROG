@@ -12,7 +12,7 @@ class ProjectAdmincontroller extends Controller
      */
     public function index()
     {
-        $projecten = Project::paginate(2);
+        $projecten = Project::paginate(100);
         return view('dashboard.projecten.index', ['projecten'=>$projecten]);
         
     }
@@ -22,7 +22,8 @@ class ProjectAdmincontroller extends Controller
      */
     public function create()
     {
-       return view('dashboard.projecten.create');
+       $project = new Project(); 
+       return view('dashboard.projecten.create', ['project' => $project ]);
     }
 
     /**
@@ -30,13 +31,29 @@ class ProjectAdmincontroller extends Controller
      */
     public function store(Request $request)
     {
-        dump( $request->all() );
+        
+        $valid = $request->validate([
+            'titel' => 'required|unique:projecten|max:255',
+            'img' => '',
+            'description' => 'required|unique:projecten|max:255',
+        ]);
+
+        $projecten = new Project($valid);
+        $projecten->save();
+
+
+        return redirect( route('projecten.index') );
+
+
+      
+
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Project $project)
+    public function show(Project $projecten)
     {
         //
     }
@@ -44,25 +61,36 @@ class ProjectAdmincontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Project $project)
+    public function edit(Project $projecten)
     {
-        //
+      return view('dashboard.projecten.edit',['project' => $projecten]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Project $projecten)
     {
-        //
+        $valid = $request->validate([
+            'titel' => 'required|unique:projecten|max:255',
+            'img' => '',
+            'description' => 'required|unique:projecten|max:255',
+        ]);
+    
+        $projecten->update($valid);
+        $projecten->save();
+    
+        return redirect(route('projecten.index'));
     }
-
+    
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Project $project)
+    public function destroy(Project $projecten)
     {
-        //
+        $projecten->delete();
+
+        return redirect(route('projecten.index'));
     }
 
 //     public function store(Request $request)
