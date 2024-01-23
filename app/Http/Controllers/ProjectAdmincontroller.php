@@ -34,6 +34,7 @@ class ProjectAdmincontroller extends Controller
         
         $valid = $request->validate([
             'titel' => 'required|unique:projecten|max:255',
+            'intro' => 'required|unique:projecten|max:255',
             'img' => '',
             'description' => 'required|unique:projecten|max:255',
         ]);
@@ -73,6 +74,7 @@ class ProjectAdmincontroller extends Controller
     {
         $valid = $request->validate([
             'titel' => 'required|unique:projecten|max:255',
+            'intro' => 'required|unique:projecten|max:255',
             'img' => '',
             'description' => 'required|unique:projecten|max:255',
         ]);

@@ -36,6 +36,9 @@
 
             <article class="nextPage__card">
             <a href="{{ route('projecten.edit', ['projecten' => $project]) }}" class="nextPage__h2">{{$project->titel}}</a>
+            <p class="nextPage__p">
+            {{$project->intro}}
+            </p>
             <figure class="nextPage__figureImg">
                 <img src="{{$project->img}}" alt="" class="nextPage__img" />
             </figure>
