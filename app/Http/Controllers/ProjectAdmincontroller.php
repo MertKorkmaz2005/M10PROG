@@ -12,7 +12,9 @@ class ProjectAdmincontroller extends Controller
      */
     public function index()
     {
-        //
+        $projecten = Project::paginate(2);
+        return view('dashboard.projecten.index', ['projecten'=>$projecten]);
+        
     }
 
     /**
@@ -20,7 +22,7 @@ class ProjectAdmincontroller extends Controller
      */
     public function create()
     {
-        //
+       return view('dashboard.projecten.create');
     }
 
     /**
@@ -28,7 +30,7 @@ class ProjectAdmincontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dump( $request->all() );
     }
 
     /**
@@ -62,4 +64,9 @@ class ProjectAdmincontroller extends Controller
     {
         //
     }
-}
+
+//     public function store(Request $request)
+//     {
+//         dump( $request->all() );
+//     }
+ }

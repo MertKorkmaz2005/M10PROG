@@ -40,7 +40,7 @@ Route::get('/projecten/add', [ ProjectController::class, 'add' ])->name('project
 
 Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){
     Route::get('/', function () {
-        return view('dashboard');
+        return view('dashboard' );
     })->name('dashboard');
     Route::resources([
         'projecten' => ProjectAdmincontroller::class,

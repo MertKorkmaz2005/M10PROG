@@ -9,7 +9,7 @@ class ProjectController extends Controller
 {
     public function index(){
 
-        $projecten = project::all();
+        $projecten = Project::all();
 
         return view('projecten.index', [
             'projecten' => $projecten
