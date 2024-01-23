@@ -31,7 +31,11 @@ class ProjectAdmincontroller extends Controller
      */
     public function store(Request $request)
     {
-        
+        $img = $request->file('img');
+
+        dd($img);
+
+
         $valid = $request->validate([
             'titel' => 'required|unique:projecten|max:255',
             'intro' => 'required|unique:projecten|max:255',

@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <form action="{{route('projecten.store')}}" method="POST">
+        <form action="{{route('projecten.store')}}" enctype="multipart/form-data" method="POST">
             @csrf
 
 

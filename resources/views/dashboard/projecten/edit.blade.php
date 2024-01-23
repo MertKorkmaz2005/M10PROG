@@ -31,7 +31,7 @@
         </div>
        
 
-        <form action="{{route('projecten.update', ['projecten' => $project])}}" method="POST">
+        <form action="{{route('projecten.update', ['projecten' => $project])}}" enctype="multipart/form-data" method="POST">
             @method('PUT')
             @csrf
                 <div class="mt-8 max-w-md">
