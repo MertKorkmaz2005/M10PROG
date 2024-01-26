@@ -45,6 +45,12 @@
             <p class="nextPage__p">
             {{$project->description}}
             </p>
+          </p>
+          @if($project->img2)
+           <figure class="nextPage__figureImg">
+           <img class="nextPage__img"src="{{Storage::url($project->img2)}}"> 
+          </figure>
+            @endif
             <td> 
                 <a href="{{ route('projecten.edit', ['projecten' => $project]) }}" class="underline">Bewerk</a>
             </td>

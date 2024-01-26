@@ -14,7 +14,11 @@
           <p class="nextPage__p">
           {{$project->description}}
           </p>
-
+          @if($project->img2)
+           <figure class="nextPage__figureImg">
+           <img class="nextPage__img"src="{{Storage::url($project->img2)}}"> 
+          </figure>
+            @endif
           <figure class="nextPage__buttonWrapper">
             <a class="nextPage__arrowLink" href="{{route('projecten.show', $project)}}"
               ><button class="nextPage__arrowButton">

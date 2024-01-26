@@ -31,10 +31,7 @@ class ProjectAdmincontroller extends Controller
      */
     public function store(Request $request)
     {
-        $img = $request->file('img');
-
-        dd($img);
-
+      
 
         $valid = $request->validate([
             'titel' => 'required|unique:projecten|max:255',
@@ -43,8 +40,20 @@ class ProjectAdmincontroller extends Controller
             'description' => 'required|unique:projecten|max:255',
         ]);
 
-        $projecten = new Project($valid);
-        $projecten->save();
+        $project = new Project($valid);
+        $project->save();
+
+        $img = $request->file('img2');
+
+
+        if ( ! empty($img) ) {
+            
+            $path = $request->file('img2')?->store('public/projecten');
+            $project->img2 = $path;
+            $project->save();
+            
+        }
+
 
 
         return redirect( route('projecten.index') );
@@ -76,6 +85,8 @@ class ProjectAdmincontroller extends Controller
      */
     public function update(Request $request, Project $projecten)
     {
+      
+
         $valid = $request->validate([
             'titel' => 'required|unique:projecten|max:255',
             'intro' => 'required|unique:projecten|max:255',
@@ -85,13 +96,24 @@ class ProjectAdmincontroller extends Controller
     
         $projecten->update($valid);
         $projecten->save();
+
+        $img = $request->file('img2');
+
+        if ( ! empty($img) ) {
+            
+            $path = $request->file('img2')?->store('public/projecten');
+            $projecten->img2 = $path;
+            $projecten->save();
+            
+        }
+
+
+
     
         return redirect(route('projecten.index'));
     }
     
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(Project $projecten)
     {
         $projecten->delete();
